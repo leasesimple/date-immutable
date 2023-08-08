@@ -13,12 +13,12 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --no-cache",
-    "test:build": "node test-build.js",
+    "test:build": "yarn build && node test-build.js",
     "lint:eslint": "eslint --ext \".ts,.js\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lintfix": "prettier --write --list-different . && yarn lint:eslint --fix",
-    "prepublishOnly": "yarn lint && yarn test && yarn build && yarn test:build"
+    "prepublishOnly": "yarn lint && yarn test && yarn test:build"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
