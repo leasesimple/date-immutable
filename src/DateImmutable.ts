@@ -18,7 +18,7 @@ const DateImmutableEnumerableProperties: Array<keyof DateImmutable> = ['year', '
  * - Enumeration
  * - Month start from 1
  */
-export default class DateImmutable {
+export class DateImmutable {
   private constructor(private readonly _date: Date) {
     // Hides _date from enumerable
     Object.defineProperty(this, '_date', { enumerable: false })

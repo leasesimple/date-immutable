@@ -1,10 +1,11 @@
 const assert = require('assert')
-const DateImmutable = require('./dist/DateImmutable')
+const dateImmutable = require('./dist/DateImmutable')
+const { DateImmutable, from, fromTimestamp, fromString, fromDate, fromObject } = dateImmutable
 
-assert.deepStrictEqual(DateImmutable.default.from, DateImmutable.from)
-assert.deepStrictEqual(DateImmutable.default.fromDate, DateImmutable.fromDate)
-assert.deepStrictEqual(DateImmutable.default.fromString, DateImmutable.fromString)
-assert.deepStrictEqual(DateImmutable.default.fromObject, DateImmutable.fromObject)
-assert.deepStrictEqual(DateImmutable.default.fromTimestamp, DateImmutable.fromTimestamp)
+assert.deepStrictEqual(DateImmutable.from, from)
+assert.deepStrictEqual(DateImmutable.fromDate, fromDate)
+assert.deepStrictEqual(DateImmutable.fromString, fromString)
+assert.deepStrictEqual(DateImmutable.fromObject, fromObject)
+assert.deepStrictEqual(DateImmutable.fromTimestamp, fromTimestamp)
 
-DateImmutable.fromString()
+assert.deepStrictEqual(DateImmutable.from(0).toDate(), new Date(0))
