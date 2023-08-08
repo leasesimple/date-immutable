@@ -1,6 +1,6 @@
 {
   "name": "date-immutable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A super simple immutable date object, with builders, operations, destructuring, enumeration and month starting from 1.",
   "main": "dist/DateImmutable.js",
   "types": "dist/DateImmutable.d.ts",
