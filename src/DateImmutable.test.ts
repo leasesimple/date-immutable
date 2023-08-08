@@ -1,4 +1,4 @@
-import DateImmutable from './DateImmutable'
+import { DateImmutable } from './DateImmutable'
 
 describe('DateImmutable', () => {
   test('Builders', () => {
@@ -87,7 +87,7 @@ describe('DateImmutable', () => {
   test('Converters', () => {
     const date = DateImmutable.fromString('2023-08-04T01:02:03.004Z')
     expect(date.toTimestamp()).toBe(1691110923004)
-    expect(date.toString()).toBe('2023-08-04T01:02:03.004Z')
+    expect(date.toString()).toBe(new Date('2023-08-04T01:02:03.004Z').toString())
     expect(date.toISOString()).toBe('2023-08-04T01:02:03.004Z')
     expect(date.toJSON()).toBe('2023-08-04T01:02:03.004Z')
     expect(date.toDate()).toBeInstanceOf(Date)

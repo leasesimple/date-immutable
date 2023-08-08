@@ -186,7 +186,7 @@ export class DateImmutable {
   }
 
   toString(): string {
-    return this._date.toISOString()
+    return this._date.toString()
   }
 
   toISOString(): string {
