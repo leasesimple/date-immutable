@@ -74,6 +74,9 @@ date.timezoneOffset // your local timezone offset
 import { DateImmutable } from 'date-immutable'
 
 const { year, month, date, day, hours, minutes, seconds, milliseconds, timezoneOffset } = DateImmutable.from(2023, 5, 4, 9, 41)
+
+// Caution: day and timezoneOffset are not part of the array destructuring to match the fromObject builder or the toObject signature.
+const [year, month, date, hours, minutes, seconds, milliseconds] = DateImmutable.from(2023, 5, 4, 9, 41)
 ```
 
 ## Enumeration
