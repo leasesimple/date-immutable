@@ -181,6 +181,20 @@ export class DateImmutable {
 
   // #region Converters
 
+  [Symbol.iterator](): Iterator<number> {
+    const components = [this.year, this.month, this.date, this.hours, this.minutes, this.seconds, this.milliseconds]
+    let index = 0
+    return {
+      next(): IteratorResult<number> {
+        if (index < components.length) {
+          return { value: components[index++], done: false }
+        } else {
+          return { value: undefined, done: true }
+        }
+      },
+    }
+  }
+
   toTimestamp(): number {
     return this._date.getTime()
   }

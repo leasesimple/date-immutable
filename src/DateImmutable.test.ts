@@ -39,6 +39,16 @@ describe('DateImmutable', () => {
       milliseconds: 4,
     })
   })
+  test('Iterator', () => {
+    const [year, month, date, hours, minutes, seconds, milliseconds] = DateImmutable.from(2023, 8, 4, 1, 2, 3, 4)
+    expect(year).toBe(2023)
+    expect(month).toBe(8)
+    expect(date).toBe(4)
+    expect(hours).toBe(1)
+    expect(minutes).toBe(2)
+    expect(seconds).toBe(3)
+    expect(milliseconds).toBe(4)
+  })
   test('Getters', () => {
     const date = DateImmutable.from(2023, 8, 4, 1, 2, 3, 4)
     expect(date.year).toBe(2023)
