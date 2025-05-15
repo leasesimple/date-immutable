@@ -257,7 +257,14 @@ export class DateImmutable {
     )
   }
 
-  substract(duration: { years?: number; months?: number; days?: number; hours?: number; minutes?: number; seconds?: number; milliseconds?: number }): DateImmutable {
+  /**
+   * @deprecated
+   */
+  substract(duration: Parameters<DateImmutable['subtract']>[0]): DateImmutable {
+    return this.subtract(duration)
+  }
+
+  subtract(duration: { years?: number; months?: number; days?: number; hours?: number; minutes?: number; seconds?: number; milliseconds?: number }): DateImmutable {
     const { year, month, date, hours, minutes, seconds, milliseconds } = this
     return DateImmutable.from(
       year - (duration.years ?? 0),

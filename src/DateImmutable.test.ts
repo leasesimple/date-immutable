@@ -83,6 +83,17 @@ describe('DateImmutable', () => {
     expect(initial.add({ milliseconds: 2 }).toISOString()).toBe('2023-08-04T01:02:03.006Z')
     expect(initial.toISOString()).toBe('2023-08-04T01:02:03.004Z')
   })
+  test('subtract', () => {
+    const initial = DateImmutable.fromString('2023-08-04T01:02:03.004Z')
+    expect(initial.subtract({ years: 2 }).toISOString()).toBe('2021-08-04T01:02:03.004Z')
+    expect(initial.subtract({ months: 2 }).toISOString()).toBe('2023-06-04T01:02:03.004Z')
+    expect(initial.subtract({ days: 2 }).toISOString()).toBe('2023-08-02T01:02:03.004Z')
+    expect(initial.subtract({ hours: 2 }).toISOString()).toBe('2023-08-03T23:02:03.004Z')
+    expect(initial.subtract({ minutes: 2 }).toISOString()).toBe('2023-08-04T01:00:03.004Z')
+    expect(initial.subtract({ seconds: 2 }).toISOString()).toBe('2023-08-04T01:02:01.004Z')
+    expect(initial.subtract({ milliseconds: 2 }).toISOString()).toBe('2023-08-04T01:02:03.002Z')
+    expect(initial.toISOString()).toBe('2023-08-04T01:02:03.004Z')
+  })
   test('substract', () => {
     const initial = DateImmutable.fromString('2023-08-04T01:02:03.004Z')
     expect(initial.substract({ years: 2 }).toISOString()).toBe('2021-08-04T01:02:03.004Z')

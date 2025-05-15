@@ -119,7 +119,7 @@ const nextYear = initialDate.add({ years: 1 })
 // }
 
 // Same as `add`
-const previousYear = initialDate.substract({ years: 1 })
+const previousYear = initialDate.subtract({ years: 1 })
 // {
 //   year: 2024,
 //   month: 5,
